@@ -42,7 +42,7 @@ conda update -yq -nbase conda
 conda config --system --prepend channels conda-forge
 conda config --system --set auto_update_conda false
 conda config --system --set show_channel_urls true
-sync && conda clean --all && sync
+sync && conda clean -y --all && sync
 conda create -y -q --name neuro
 conda install -y -q --name neuro \
     "numpy" \
@@ -53,7 +53,7 @@ conda install -y -q --name neuro \
     "seaborn" \
     "networkx" \
     "jupyter"
-sync && conda clean --all && sync
+sync && conda clean -y --all && sync
 bash -c "source activate neuro
   pip install --no-cache-dir  \
       "nilearn" \
